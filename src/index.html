@@ -4,15 +4,17 @@
 		<title>My first three.js app</title>
 		<meta charset="UTF-8" />
 		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
 		</style>
 	</head>
 	<body>
-		<!-- Div which will hold the Output -->
-		<div id="webgl-output"></div>
-
 		<script src="../libs/three.min.js"></script>
+		<script src="../libs/stats.min.js"></script>
+		<script src="../libs/dat.gui.min.js"></script>
+		<script src="js/utils.js"></script>
 		<!-- Javascript code that runs our Three.js examples -->
 		<script src="js/script.js"></script>
 	</body>
