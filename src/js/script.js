@@ -14,8 +14,8 @@ function init() {
     // create a camera, which defines where we looking at.
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000)
     // position and point the camera to the center
-    camera.position.x = 15;
-    camera.position.y = 16;
+    camera.position.x = 0;
+    camera.position.y = 0;
     camera.position.z = 13;
     camera.lookAt(scene.position);
 
@@ -24,11 +24,12 @@ function init() {
     renderer.setClearColor(0xffffff, 1.0);
     renderer.setSize(window.innerWidth, window.innerHeight);
     
-    // var cube = createCube();
-    // scene.add(cube);
+    var cube = createCube();
+    scene.add(cube);
+    cube.position.set(0, 0, 0);
 
-    var sphere = createSphere();
-    scene.add(sphere);
+    // var sphere = createSphere();
+    // scene.add(sphere);
 
     // add the output of the renderer to the html element
     document.body.appendChild(renderer.domElement);
@@ -48,10 +49,10 @@ function init() {
     var render = function () {
         requestAnimationFrame( render );
 
-        sphere.rotation.x += 0.005;
-        sphere.rotation.y += 0.005;
+        // cube.rotation.x += 0.005;
+        // cube.rotation.y += 0.005;
 
-        sphere.scale.set(control.scale, control.scale, control.scale);
+        cube.scale.set(control.scale, control.scale, control.scale);
 
         renderer.render( scene, camera );
         stats.update()
